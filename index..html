@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"LIMA TEKNOLOGI TERKINI BIDANG GEODESI DAN GEOMATIKA"</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2340;
+    --navy-mid: #1a3a5c;
+    --gold: #c5972a;
+    --gold-light: #e8c568;
+    --cream: #faf7f0;
+    --cream-dark: #f0ebe0;
+    --text-dark: #1c1c1c;
+    --text-mid: #3d3d3d;
+    --text-light: #6b6b6b;
+    --white: #ffffff;
+    --divider: #d4c9b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* ───────── COVER PAGE ───────── */
+  .cover {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 2px solid rgba(197,151,42,0.18);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(197,151,42,0.12);
+  }
+
+  .cover-inner {
+    max-width: 680px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    margin-bottom: 32px;
+  }
+
+  .cover-rule {
+    width: 56px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 28px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .cover-subtitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 32px;
+  }
+
+  .cover-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    max-width: 460px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+
+  .cover-ornament {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+  .cover-ornament span { width: 60px; height: 1px; background: var(--gold); opacity: 0.6; }
+  .cover-ornament i { color: var(--gold); font-size: 12px; }
+
+  .cover-identity {
+    border: 1px solid rgba(197,151,42,0.3);
+    padding: 24px 40px;
+    display: inline-block;
+  }
+
+  .cover-identity .label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 6px;
+  }
+  .cover-identity .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .cover-identity .nrp {
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* ───────── DAFTAR ISI ───────── */
+  .toc-page {
+    background: var(--cream-dark);
+    padding: 80px 60px;
+    page-break-after: always;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .heading-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 36px;
+  }
+
+  .toc-list { list-style: none; }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .toc-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    min-width: 28px;
+  }
+  .toc-title { font-size: 15px; color: var(--text-dark); flex: 1; }
+  .toc-sub { font-size: 12px; color: var(--text-light); display: block; }
+  .toc-dots { flex: 1; border-bottom: 1px dotted var(--divider); margin: 0 12px; position: relative; top: -3px; }
+  .toc-cat {
+    font-size: 11px;
+    background: var(--navy);
+    color: var(--gold-light);
+    padding: 2px 9px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ───────── PENGANTAR ───────── */
+  .intro-page {
+    padding: 80px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    border-bottom: 3px solid var(--navy);
+    page-break-after: always;
+  }
+
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 32px 0;
+    background: rgba(197,151,42,0.06);
+  }
+  .pullquote p {
+    font-style: italic;
+    font-size: 17px;
+    color: var(--navy-mid);
+    line-height: 1.7;
+  }
+
+  /* ───────── TEKNOLOGI CARDS ───────── */
+  .tech-page {
+    padding: 70px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--divider);
+    page-break-after: always;
+  }
+
+  .tech-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .tech-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--navy);
+    opacity: 0.08;
+    flex-shrink: 0;
+    margin-top: -8px;
+    user-select: none;
+  }
+
+  .tech-header-text { flex: 1; }
+
+  .tech-domain {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .tech-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .tech-fullname {
+    font-size: 13px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  .tech-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    background: var(--navy);
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+  }
+  .tag.alt {
+    background: transparent;
+    border: 1px solid var(--navy);
+    color: var(--navy);
+  }
+
+  .tech-figure {
+    width: 100%;
+    height: 220px;
+    background: var(--navy);
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tech-figure svg {
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0;
+  }
+
+  .fig-caption {
+    font-size: 11px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 28px;
+  }
+
+  .col-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .col-section p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  .tech-body p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+  }
+
+  .benefit-list {
+    list-style: none;
+    margin: 8px 0 20px;
+  }
+  .benefit-list li {
+    font-size: 14px;
+    color: var(--text-mid);
+    padding: 6px 0 6px 22px;
+    border-bottom: 1px dashed var(--divider);
+    position: relative;
+    line-height: 1.6;
+  }
+  .benefit-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 8px;
+    top: 10px;
+  }
+
+  .ref-box {
+    background: var(--navy);
+    padding: 12px 18px;
+    margin-top: 20px;
+  }
+  .ref-box p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .ref-box strong { color: var(--gold-light); font-style: normal; }
+
+  /* ───────── PENUTUP ───────── */
+  .closing-page {
+    padding: 80px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--cream-dark);
+  }
+
+  .closing-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .closing-card {
+    background: var(--navy);
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .closing-card .cc-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .closing-card .cc-name {
+    font-size: 12px;
+    color: var(--white);
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  .final-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--divider);
+    margin: 36px 0;
+  }
+
+  .footer-identity {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .footer-identity .fi-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+  }
+  .footer-identity .fi-nrp {
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+  }
+  .footer-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: var(--navy);
+    opacity: 0.08;
+    line-height: 1;
+  }
+
+  @media print {
+    body { background: white; }
+    .cover, .toc-page, .intro-page, .tech-page, .closing-page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  COVER                                                       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-badge">TUGAS KLIPING PENGANTAR GEODESI</div>
+    <div class="cover-rule"></div>
+    <div class="cover-title">"LIMA TEKNOLOGI TERKINI </div>
+    <div class="cover-subtitle">DI BIDANG GEODESI &amp; GEOMATIKA</div>
+    <p class="cover-desc">
+      Kliping digital untuk menjelaskan bagaimana perkembangan teknologi pada bidang Geodesi dan Geomatika.
+      Mencakup pada 4 unsur bumi yaitu darat,laut,dan udara dalam melakukan pengukuran bumi, pemetaan,
+      serta pemantauan.
+    </p>
+    <div class="cover-ornament">
+      <span></span>
+      <span style="font-size:16px;color:var(--gold);opacity:0.7;">✦</span>
+      <span></span>
+    </div>
+    <div class="cover-identity">
+      <div class="label">Disusun oleh</div>
+      <div class="name">Anom Ali Subarkah</div>
+      <div class="nrp">NRP &nbsp;232025066</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  DAFTAR ISI                                                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="toc-page">
+  <p class="section-eyebrow">Navigasi Isi</p>
+  <h2 class="section-heading">Daftar Isi</h2>
+  <div class="heading-rule"></div>
+  <ul class="toc-list">
+    <li class="toc-item">
+      <span class="toc-num">I</span>
+      <div style="flex:1">
+        <span class="toc-title">Pengantar</span>
+        <span class="toc-sub">Latar belakang dan relevansi teknologi geospasial masa kini</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Pengantar</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">1</span>
+      <div style="flex:1">
+        <span class="toc-title">UAV / Drone Fotogrametri</span>
+        <span class="toc-sub">Pemetaan udara presisi tinggi · Kegiatan darat &amp; udara</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Udara / Darat</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">2</span>
+      <div style="flex:1">
+        <span class="toc-title">LiDAR (Airborne &amp; UAV-borne)</span>
+        <span class="toc-sub">Pemindaian laser 3D · Kegiatan darat &amp; udara</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Udara / Darat</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">3</span>
+      <div style="flex:1">
+        <span class="toc-title">GNSS RTK / PPK</span>
+        <span class="toc-sub">Penentuan posisi satelit presisi · Kegiatan darat</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Darat</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">4</span>
+      <div style="flex:1">
+        <span class="toc-title">InSAR (Interferometric SAR)</span>
+        <span class="toc-sub">Pemantauan deformasi bumi dari satelit · Kegiatan darat &amp; laut</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Satelit</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">5</span>
+      <div style="flex:1">
+        <span class="toc-title">Multibeam Echosounder (MBES)</span>
+        <span class="toc-sub">Survei batimetri dasar laut · Kegiatan laut</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Laut</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VI</span>
+      <div style="flex:1">
+        <span class="toc-title">Penutup</span>
+        <span class="toc-sub">Sintesis dan prospek perkembangan ke depan</span>
+      </div>
+      <div class="toc-dots"></div>
+      <span class="toc-cat">Penutup</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PENGANTAR                                                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="intro-page">
+  <p class="section-eyebrow">Kata Pengantar</p>
+  <h2 class="section-heading">Pemetaan di Era Digital</h2>
+  <div class="heading-rule"></div>
+
+  <p style="font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:14px;">
+    Geodesi dan geomatika tidak lagi sekadar urusan theodolite dan pita ukur. Gelombang transformasi digital selama dua dekade terakhir telah mendorong bidang ini melampaui batasan konvensionalnya. Kini, sebuah wahana tanpa awak mampu memetakan ribuan hektare dalam beberapa jam, satelit radar mengendus pergeseran tanah sekecil milimeter dari orbit ratusan kilometer, dan kapal survei hidrografi merekonstruksi topografi dasar laut dengan ketelitian yang sebelumnya sulit dibayangkan.
+  </p>
+
+  <div class="pullquote">
+    <p>"Teknologi geospasial mutakhir bukan sekadar alat bantu survei — ia telah menjadi infrastruktur epistemik bagi hampir semua pengambilan keputusan berbasis ruang: perencanaan kota, mitigasi bencana, pengelolaan pesisir, hingga navigasi presisi."</p>
+  </div>
+
+  <p style="font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:14px;">
+    Kliping digital ini menelusuri lima teknologi terdepan yang tengah membentuk ulang praktik geodesi dan geomatika di lapangan. Kelimanya dipilih berdasarkan kebaruan penerapan, dampak terhadap produktivitas survei, dan relevansinya bagi tiga medium kegiatan: darat, laut, dan udara. Setiap teknologi diulas dari sisi prinsip kerja, cara pengoperasian, hingga manfaat konkret yang telah terbukti di berbagai proyek nyata di Indonesia maupun dunia.
+  </p>
+
+  <p style="font-size:15px;line-height:1.85;color:var(--text-mid);">
+    Sajian ini disusun dengan harapan dapat menjadi referensi ringkas namun komprehensif bagi siapa pun yang ingin memahami lanskap teknologi geospasial kontemporer — baik sebagai bekal studi lanjutan maupun sebagai panduan awal dalam memilih teknologi yang tepat untuk suatu pekerjaan survei.
+  </p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  TEKNOLOGI 1 – UAV FOTOGRAMETRI                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="tech-page">
+  <div class="tech-header">
+    <div class="tech-number"></div>
+    <div class="tech-header-text">
+      <p class="tech-domain">Kegiatan: Udara &amp; Darat</p>
+      <h2 class="tech-title">UAV / Drone Fotogrametri</h2>
+      <p class="tech-fullname">Unmanned Aerial Vehicle — Aerial Photogrammetry Survey</p>
+    </div>
+  </div>
+
+  <div class="tech-tags">
+    <span class="tag">Pemetaan Udara</span>
+    <span class="tag">Ortofoto</span>
+    <span class="tag">DEM/DSM</span>
+    <span class="tag alt">Darat</span>
+    <span class="tag alt">Udara</span>
+  </div>
+
+  <!-- Ilustrasi SVG -->
+  <div class="tech-figure">
+    <svg viewBox="0 0 860 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <!-- sky gradient -->
+      <defs>
+        <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d2340"/>
+          <stop offset="100%" stop-color="#1a3a5c"/>
+        </linearGradient>
+        <linearGradient id="terrain1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2a6b3a"/>
+          <stop offset="100%" stop-color="#1c4a28"/>
+        </linearGradient>
+      </defs>
+      <rect width="860" height="220" fill="url(#sky1)"/>
+      <!-- terrain -->
+      <polygon points="0,160 80,140 160,150 260,130 380,145 460,125 560,140 680,130 860,145 860,220 0,220" fill="url(#terrain1)" opacity="0.85"/>
+      <!-- GCP markers -->
+      <rect x="120" y="138" width="16" height="16" fill="#c5972a" opacity="0.9"/>
+      <line x1="128" y1="154" x2="128" y2="180" stroke="#c5972a" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.6"/>
+      <rect x="340" y="126" width="16" height="16" fill="#c5972a" opacity="0.9"/>
+      <rect x="580" y="132" width="16" height="16" fill="#c5972a" opacity="0.9"/>
+      <!-- drone body -->
+      <g transform="translate(390,68)">
+        <!-- arms -->
+        <line x1="0" y1="0" x2="-38" y2="-20" stroke="#e8c568" stroke-width="2.5"/>
+        <line x1="0" y1="0" x2="38" y2="-20" stroke="#e8c568" stroke-width="2.5"/>
+        <line x1="0" y1="0" x2="-38" y2="20" stroke="#e8c568" stroke-width="2.5"/>
+        <line x1="0" y1="0" x2="38" y2="20" stroke="#e8c568" stroke-width="2.5"/>
+        <!-- propellers -->
+        <ellipse cx="-38" cy="-20" rx="14" ry="4" fill="none" stroke="#e8c568" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="38" cy="-20" rx="14" ry="4" fill="none" stroke="#e8c568" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="-38" cy="20" rx="14" ry="4" fill="none" stroke="#e8c568" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="38" cy="20" rx="14" ry="4" fill="none" stroke="#e8c568" stroke-width="1.5" opacity="0.7"/>
+        <!-- center body -->
+        <rect x="-14" y="-10" width="28" height="20" rx="3" fill="#e8c568"/>
+        <!-- camera -->
+        <rect x="-6" y="10" width="12" height="9" rx="2" fill="#0d2340"/>
+        <circle cx="0" cy="14" r="3" fill="#c5972a"/>
+      </g>
+      <!-- flight path -->
+      <path d="M 80,75 Q 200,55 390,68 Q 580,80 760,65" fill="none" stroke="#c5972a" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+      <!-- scan lines from drone -->
+      <line x1="390" y1="77" x2="128" y2="154" stroke="#c5972a" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.35"/>
+      <line x1="390" y1="77" x2="348" y2="142" stroke="#c5972a" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.35"/>
+      <line x1="390" y1="77" x2="588" y2="140" stroke="#c5972a" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.35"/>
+      <!-- labels -->
+      <text x="428" y="52" font-family="Georgia,serif" font-size="11" fill="#e8c568" opacity="0.85">UAV / Drone</text>
+      <text x="88" y="185" font-family="Georgia,serif" font-size="10" fill="#c5972a" opacity="0.8">GCP</text>
+      <text x="352" y="172" font-family="Georgia,serif" font-size="10" fill="#c5972a" opacity="0.8">GCP</text>
+      <text x="596" y="178" font-family="Georgia,serif" font-size="10" fill="#c5972a" opacity="0.8">GCP</text>
+      <text x="20" y="64" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.5)">Jalur terbang</text>
+    </svg>
+  </div>
+  <p class="fig-caption">Gambar 1. Ilustrasi operasional UAV fotogrametri dengan Ground Control Points (GCP)</p>
+
+  <div class="tech-body">
+    <p>
+      UAV fotogrametri merupakan metode pemetaan yang memanfaatkan wahana tanpa awak (drone) yang dilengkapi kamera resolusi tinggi untuk memotret suatu area dari udara secara sistematis. Teknik ini menggabungkan prinsip fotogrametri — ilmu pengukuran berbasis foto — dengan fleksibilitas dan mobilitas platform udara tanpa pilot.
+    </p>
+
+    <div class="two-col">
+      <div class="col-section">
+        <h4>Cara Kerja</h4>
+        <p>
+          Drone diterbangkan pada ketinggian dan jalur yang telah direncanakan sebelumnya. Kamera secara otomatis mengabadikan gambar berulang kali dengan tingkat tumpang tindih (overlap) antara 60–80%. Foto-foto tersebut kemudian diolah melalui perangkat lunak fotogrametri seperti Agisoft Metashape atau Pix4D menggunakan metode Structure from Motion (SfM), sehingga menghasilkan ortofoto, model permukaan digital (DSM/DTM), dan model 3D kawasan yang bersangkutan. Akurasi posisi diperkuat menggunakan Ground Control Points (GCP) yang diukur dengan GNSS RTK.
+        </p>
+      </div>
+      <div class="col-section">
+        <h4>Manfaat &amp; Kegunaan</h4>
+        <ul class="benefit-list">
+          <li>Pemetaan desa dan kawasan perkotaan skala besar secara cepat dan hemat biaya dibanding metode konvensional</li>
+          <li>Pemantauan progres konstruksi jalan tol, bendungan, dan infrastruktur publik lainnya</li>
+          <li>Survei perubahan tata guna lahan dan pemantauan kawasan pertambangan</li>
+          <li>Pembuatan peta topografi dengan resolusi spasial hingga 2–5 cm/piksel</li>
+          <li>Mendukung perencanaan tata ruang wilayah pesisir dan kawasan wisata</li>
+          <li>Respons cepat pasca-bencana untuk menilai kerusakan dan memandu evakuasi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <p><strong>Referensi:</strong> Prayogo, I.P.H., Manoppo, F.J., &amp; Lefrandt, L.I. (2020). Pemanfaatan teknologi UAV quadcopter dalam pemetaan digital (fotogrametri) menggunakan kerangka GCP. <em>Jurnal Ilmiah Media Engineering</em>, 10(1). | Geodesi UGM (2025). Tim PPM Geodesi UGM dukung pemetaan Pantai Bandengan Jepara dengan teknologi GNSS, fotogrametri, dan LiDAR. geodesi.ugm.ac.id</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  TEKNOLOGI 2 – LiDAR                                        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="tech-page">
+  <div class="tech-header">
+    <div class="tech-number"></div>
+    <div class="tech-header-text">
+      <p class="tech-domain">Kegiatan: Udara &amp; Darat</p>
+      <h2 class="tech-title">LiDAR Airborne &amp; UAV-borne</h2>
+      <p class="tech-fullname">Light Detection and Ranging — 3D Laser Scanning</p>
+    </div>
+  </div>
+
+  <div class="tech-tags">
+    <span class="tag">Point Cloud</span>
+    <span class="tag">DTM/DSM</span>
+    <span class="tag">Model 3D</span>
+    <span class="tag alt">Udara</span>
+    <span class="tag alt">Darat</span>
+  </div>
+
+  <div class="tech-figure">
+    <svg viewBox="0 0 860 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1a2e"/>
+          <stop offset="100%" stop-color="#12284a"/>
+        </linearGradient>
+      </defs>
+      <rect width="860" height="220" fill="url(#sky2)"/>
+      <!-- ground with point cloud simulation -->
+      <rect x="0" y="155" width="860" height="65" fill="#1c3a26" opacity="0.6"/>
+      <!-- point cloud dots (simulated) -->
+      <g opacity="0.8">
+        <!-- row 1 -->
+        <circle cx="60" cy="150" r="2" fill="#c5972a"/><circle cx="90" cy="145" r="1.5" fill="#e8c568"/>
+        <circle cx="120" cy="152" r="2" fill="#c5972a"/><circle cx="150" cy="148" r="1.5" fill="#e8c568"/>
+        <circle cx="180" cy="153" r="2" fill="#c5972a"/><circle cx="210" cy="147" r="2" fill="#e8c568"/>
+        <circle cx="240" cy="150" r="1.5" fill="#c5972a"/><circle cx="270" cy="155" r="2" fill="#e8c568"/>
+        <circle cx="300" cy="149" r="2" fill="#c5972a"/><circle cx="330" cy="152" r="1.5" fill="#e8c568"/>
+        <circle cx="360" cy="148" r="2" fill="#c5972a"/><circle cx="390" cy="153" r="1.5" fill="#e8c568"/>
+        <circle cx="420" cy="150" r="2" fill="#c5972a"/><circle cx="450" cy="146" r="1.5" fill="#e8c568"/>
+        <circle cx="480" cy="151" r="2" fill="#c5972a"/><circle cx="510" cy="154" r="1.5" fill="#e8c568"/>
+        <circle cx="540" cy="149" r="2" fill="#c5972a"/><circle cx="570" cy="152" r="1.5" fill="#e8c568"/>
+        <circle cx="600" cy="148" r="2" fill="#c5972a"/><circle cx="630" cy="151" r="1.5" fill="#e8c568"/>
+        <circle cx="660" cy="153" r="2" fill="#c5972a"/><circle cx="690" cy="148" r="1.5" fill="#e8c568"/>
+        <circle cx="720" cy="151" r="2" fill="#c5972a"/><circle cx="750" cy="154" r="1.5" fill="#e8c568"/>
+        <circle cx="780" cy="149" r="2" fill="#c5972a"/><circle cx="810" cy="152" r="1.5" fill="#e8c568"/>
+        <!-- vegetation (taller points) -->
+        <circle cx="200" cy="118" r="2" fill="#2d8a4e"/><circle cx="210" cy="110" r="2.5" fill="#3aaa60"/>
+        <circle cx="220" cy="105" r="2" fill="#2d8a4e"/><circle cx="230" cy="112" r="2" fill="#3aaa60"/>
+        <circle cx="240" cy="108" r="2.5" fill="#2d8a4e"/><circle cx="250" cy="120" r="1.5" fill="#3aaa60"/>
+        <circle cx="500" cy="115" r="2" fill="#2d8a4e"/><circle cx="510" cy="108" r="2.5" fill="#3aaa60"/>
+        <circle cx="520" cy="103" r="2" fill="#2d8a4e"/><circle cx="530" cy="110" r="2" fill="#3aaa60"/>
+        <!-- building -->
+        <circle cx="380" cy="120" r="2" fill="#7ab8e8"/><circle cx="390" cy="120" r="2" fill="#7ab8e8"/>
+        <circle cx="400" cy="120" r="2" fill="#7ab8e8"/><circle cx="410" cy="120" r="2" fill="#7ab8e8"/>
+        <circle cx="380" cy="130" r="2" fill="#5a9cd4"/><circle cx="410" cy="130" r="2" fill="#5a9cd4"/>
+        <circle cx="380" cy="140" r="2" fill="#5a9cd4"/><circle cx="410" cy="140" r="2" fill="#5a9cd4"/>
+      </g>
+      <!-- LiDAR sensor on drone -->
+      <g transform="translate(430,50)">
+        <rect x="-18" y="-10" width="36" height="20" rx="3" fill="#e8c568"/>
+        <circle cx="0" cy="10" r="5" fill="#0d2340" stroke="#c5972a" stroke-width="1.5"/>
+        <!-- laser pulses -->
+        <line x1="-10" y1="15" x2="-50" y2="148" stroke="#c5972a" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
+        <line x1="0" y1="15" x2="0" y2="148" stroke="#c5972a" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.7"/>
+        <line x1="10" y1="15" x2="50" y2="148" stroke="#c5972a" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
+        <line x1="-15" y1="15" x2="-110" y2="148" stroke="#c5972a" stroke-width="0.8" stroke-dasharray="5,3" opacity="0.4"/>
+        <line x1="15" y1="15" x2="110" y2="148" stroke="#c5972a" stroke-width="0.8" stroke-dasharray="5,3" opacity="0.4"/>
+      </g>
+      <!-- labels -->
+      <text x="468" y="36" font-family="Georgia,serif" font-size="11" fill="#e8c568" opacity="0.9">LiDAR Sensor</text>
+      <text x="30" y="175" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.5)">Point cloud — ground</text>
+      <text x="165" y="100" font-family="Georgia,serif" font-size="10" fill="#3aaa60" opacity="0.9">Vegetasi</text>
+      <text x="360" y="115" font-family="Georgia,serif" font-size="10" fill="#7ab8e8" opacity="0.9">Bangunan</text>
+    </svg>
+  </div>
+  <p class="fig-caption">Gambar 2. Ilustrasi akuisisi point cloud LiDAR — membedakan ground, vegetasi, dan bangunan</p>
+
+  <div class="tech-body">
+    <p>
+      LiDAR (Light Detection and Ranging) merupakan teknologi penginderaan aktif yang memancarkan pulsa laser ke permukaan bumi, lalu menghitung jarak berdasarkan selang waktu pantul sinyal tersebut. Hasilnya adalah kumpulan jutaan titik koordinat tiga dimensi yang dikenal sebagai <em>point cloud</em> — representasi digital permukaan bumi dengan tingkat detail yang luar biasa.
+    </p>
+
+    <div class="two-col">
+      <div class="col-section">
+        <h4>Cara Kerja</h4>
+        <p>
+          Sensor LiDAR memancarkan pulsa cahaya laser (biasanya panjang gelombang near-infrared) dengan frekuensi hingga ratusan ribu pulsa per detik. Setiap pulsa yang mengenai objek akan dipantulkan kembali; waktu tempuh pulsa dikalikan kecepatan cahaya menghasilkan jarak presisi. Bersama data orientasi dari IMU (Inertial Measurement Unit) dan posisi dari GNSS, titik-titik 3D dihasilkan. Proses pascapengolahan mencakup koreksi strip, klasifikasi titik (tanah, vegetasi rendah, vegetasi tinggi, bangunan), dan interpolasi DTM/DSM.
+        </p>
+      </div>
+      <div class="col-section">
+        <h4>Manfaat &amp; Kegunaan</h4>
+        <ul class="benefit-list">
+          <li>Pemetaan topografi presisi tinggi di bawah kanopi hutan yang tidak tembus kamera optis</li>
+          <li>Mendukung percepatan proyek jalan tol dengan penyediaan basemap topografi skala 1:1.000</li>
+          <li>Pembuatan model 3D kawasan perkotaan untuk perencanaan tata ruang dan aset pertanahan</li>
+          <li>Kajian serapan karbon hutan dan pemantauan kawasan konservasi</li>
+          <li>Deteksi perubahan morfologi lereng dan pemantauan potensi longsor</li>
+          <li>Survei arkeologi — menemukan struktur tersembunyi di bawah vegetasi lebat</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <p><strong>Referensi:</strong> Geodesi UGM (2025). Pemetaan berbasis drone LiDAR Kota Semarang ±250 ha bersama Kantor Pertanahan. geodesi.ugm.ac.id | Hakim, H. (2024). Workshop LiDAR Terra Drone, ITN Malang. <em>geodesi.itn.ac.id</em> | Hutama Karya (2021). Pemanfaatan teknologi UAV LiDAR untuk percepatan JTTS. <em>Proceedings ISI Undip</em>.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  TEKNOLOGI 3 – GNSS RTK/PPK                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="tech-page">
+  <div class="tech-header">
+    <div class="tech-number"></div>
+    <div class="tech-header-text">
+      <p class="tech-domain">Kegiatan: Darat (utama) &amp; Udara</p>
+      <h2 class="tech-title">GNSS RTK / PPK</h2>
+      <p class="tech-fullname">Global Navigation Satellite System — Real Time Kinematic / Post Processing Kinematic</p>
+    </div>
+  </div>
+
+  <div class="tech-tags">
+    <span class="tag">Penentuan Posisi</span>
+    <span class="tag">Survei Kadaster</span>
+    <span class="tag">GCP Drone</span>
+    <span class="tag alt">Darat</span>
+    <span class="tag alt">Udara</span>
+  </div>
+
+  <div class="tech-figure">
+    <svg viewBox="0 0 860 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d2340"/>
+          <stop offset="100%" stop-color="#1a3557"/>
+        </linearGradient>
+      </defs>
+      <rect width="860" height="220" fill="url(#sky3)"/>
+      <!-- Earth surface -->
+      <rect x="0" y="165" width="860" height="55" fill="#2a4a20" opacity="0.7"/>
+      <!-- Satellites -->
+      <g transform="translate(150,30)">
+        <rect x="-20" y="-8" width="40" height="16" rx="2" fill="#7ab8e8"/>
+        <rect x="-35" y="-4" width="14" height="8" rx="1" fill="#e8c568" opacity="0.8"/>
+        <rect x="21" y="-4" width="14" height="8" rx="1" fill="#e8c568" opacity="0.8"/>
+        <text x="0" y="5" font-family="Georgia,serif" font-size="9" fill="#0d2340" text-anchor="middle" font-weight="bold">GPS</text>
+      </g>
+      <g transform="translate(430,18)">
+        <rect x="-20" y="-8" width="40" height="16" rx="2" fill="#7ab8e8"/>
+        <rect x="-35" y="-4" width="14" height="8" rx="1" fill="#e8c568" opacity="0.8"/>
+        <rect x="21" y="-4" width="14" height="8" rx="1" fill="#e8c568" opacity="0.8"/>
+        <text x="0" y="5" font-family="Georgia,serif" font-size="9" fill="#0d2340" text-anchor="middle" font-weight="bold">GLN</text>
+      </g>
+      <g transform="translate(700,28)">
+        <rect x="-20" y="-8" width="40" height="16" rx="2" fill="#7ab8e8"/>
+        <rect x="-35" y="-4" width="14" height="8" rx="1" fill="#e8c568" opacity="0.8"/>
+        <rect x="21" y="-4" width="14" height="8" rx="1" fill="#e8c568" opacity="0.8"/>
+        <text x="0" y="5" font-family="Georgia,serif" font-size="9" fill="#0d2340" text-anchor="middle" font-weight="bold">GAL</text>
+      </g>
+      <!-- signal lines to base station -->
+      <line x1="150" y1="38" x2="300" y2="155" stroke="#e8c568" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+      <line x1="430" y1="26" x2="300" y2="155" stroke="#e8c568" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+      <line x1="700" y1="36" x2="300" y2="155" stroke="#e8c568" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+      <!-- signal lines to rover -->
+      <line x1="150" y1="38" x2="580" y2="158" stroke="#c5972a" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+      <line x1="430" y1="26" x2="580" y2="158" stroke="#c5972a" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+      <line x1="700" y1="36" x2="580" y2="158" stroke="#c5972a" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+      <!-- RTK data link -->
+      <line x1="316" y1="155" x2="565" y2="155" stroke="#3aaa60" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+      <text x="440" y="148" font-family="Georgia,serif" font-size="10" fill="#3aaa60" text-anchor="middle" opacity="0.9">Data link RTK</text>
+      <!-- Base station -->
+      <rect x="276" y="145" width="48" height="28" rx="3" fill="#1a3a5c" stroke="#e8c568" stroke-width="1.5"/>
+      <line x1="300" y1="145" x2="300" y2="120" stroke="#e8c568" stroke-width="2"/>
+      <circle cx="300" cy="117" r="5" fill="none" stroke="#e8c568" stroke-width="1.5"/>
+      <circle cx="300" cy="117" r="10" fill="none" stroke="#e8c568" stroke-width="0.8" opacity="0.4"/>
+      <text x="300" y="188" font-family="Georgia,serif" font-size="10" fill="#e8c568" text-anchor="middle" opacity="0.9">Base Station</text>
+      <!-- Rover -->
+      <rect x="556" y="148" width="48" height="24" rx="3" fill="#1a3a5c" stroke="#c5972a" stroke-width="1.5"/>
+      <line x1="580" y1="148" x2="580" y2="128" stroke="#c5972a" stroke-width="2"/>
+      <circle cx="580" cy="126" r="4" fill="none" stroke="#c5972a" stroke-width="1.5"/>
+      <text x="580" y="188" font-family="Georgia,serif" font-size="10" fill="#c5972a" text-anchor="middle" opacity="0.9">Rover (titik ukur)</text>
+      <!-- accuracy label -->
+      <rect x="740" y="75" width="100" height="40" rx="3" fill="rgba(197,151,42,0.15)" stroke="#c5972a" stroke-width="0.8"/>
+      <text x="790" y="92" font-family="Georgia,serif" font-size="10" fill="#e8c568" text-anchor="middle">Akurasi</text>
+      <text x="790" y="107" font-family="Georgia,serif" font-size="13" fill="#e8c568" text-anchor="middle" font-weight="bold">±1–3 cm</text>
+    </svg>
+  </div>
+  <p class="fig-caption">Gambar 3. Skema GNSS RTK: sinyal multi-konstelasi, base station, rover, dan data link koreksi real-time</p>
+
+  <div class="tech-body">
+    <p>
+      GNSS RTK (Real Time Kinematic) adalah metode penentuan posisi berbasis satelit yang mampu menghasilkan koordinat horizontal dan vertikal dengan ketelitian sentimeter secara langsung di lapangan. Teknologi ini menjadi tulang punggung hampir seluruh pekerjaan survei geodesi modern, dari pengukuran batas bidang tanah hingga penempatan Ground Control Points pada pemetaan drone.
+    </p>
+
+    <div class="two-col">
+      <div class="col-section">
+        <h4>Cara Kerja</h4>
+        <p>
+          Terdapat dua perangkat yang bekerja bersamaan: <em>base station</em> yang ditempatkan di titik berkoordinat diketahui, dan <em>rover</em> yang berpindah ke titik-titik yang akan diukur. Keduanya menerima sinyal dari konstelasi satelit yang sama (GPS, GLONASS, Galileo, BeiDou). Base station menghitung selisih antara posisi yang dihitung dan posisi sebenarnya, lalu mengirim data koreksi ini ke rover melalui radio link atau internet. Rover menerapkan koreksi tersebut sehingga posisinya akurat pada tingkat sentimeter. Pada metode PPK (Post Processing Kinematic), koreksi diterapkan setelah pengukuran selesai menggunakan data yang direkam.
+        </p>
+      </div>
+      <div class="col-section">
+        <h4>Manfaat &amp; Kegunaan</h4>
+        <ul class="benefit-list">
+          <li>Pengukuran batas bidang tanah untuk keperluan sertifikasi dan administrasi pertanahan</li>
+          <li>Pemasangan GCP pemetaan UAV dengan ketelitian cm, menjamin akurasi produk foto udara</li>
+          <li>Staking out (setting out) desain infrastruktur di lapangan</li>
+          <li>Pengukuran deformasi jembatan, bendungan, dan struktur sipil secara berkala</li>
+          <li>Mendukung survei hidrografi sebagai sistem referensi posisi kapal survey</li>
+          <li>Pemantauan gerakan lempeng tektonik dan aktivitas gunung berapi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <p><strong>Referensi:</strong> Geodesi UGM (2025). Pengukuran GNSS, pemotretan UAV, dan akuisisi LiDAR di Pantai Bandengan Jepara. geodesi.ugm.ac.id | TechnoGIS Indonesia (2024). Penambahan TGS GNSS EQ1 RTK untuk Laboratorium SIG Universitas Negeri Medan. technogis.co.id | Hutama Karya (2021). Pengolahan trajectory PPK antara LiDAR dengan base station referensi jaring kontrol geodesi. <em>Proceedings ISI Undip</em>.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  TEKNOLOGI 4 – InSAR                                        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="tech-page">
+  <div class="tech-header">
+    <div class="tech-number"></div>
+    <div class="tech-header-text">
+      <p class="tech-domain">Kegiatan: Darat &amp; Laut (via satelit)</p>
+      <h2 class="tech-title">InSAR</h2>
+      <p class="tech-fullname">Interferometric Synthetic Aperture Radar — Satellite Deformation Monitoring</p>
+    </div>
+  </div>
+
+  <div class="tech-tags">
+    <span class="tag">Deformasi Permukaan</span>
+    <span class="tag">DEM Satelit</span>
+    <span class="tag">Pemantauan Bencana</span>
+    <span class="tag alt">Darat</span>
+    <span class="tag alt">Laut</span>
+  </div>
+
+  <div class="tech-figure">
+    <svg viewBox="0 0 860 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#08101e"/>
+          <stop offset="100%" stop-color="#0d2340"/>
+        </linearGradient>
+      </defs>
+      <rect width="860" height="220" fill="url(#sky4)"/>
+      <!-- Earth curvature suggestion -->
+      <path d="M 0,180 Q 430,155 860,180" fill="#1c3a26" opacity="0.7"/>
+      <rect x="0" y="180" width="860" height="40" fill="#1c3a26" opacity="0.7"/>
+      <!-- SAR Satellite 1 (pass 1) -->
+      <g transform="translate(280,35)">
+        <rect x="-22" y="-10" width="44" height="20" rx="2" fill="#5a9cd4"/>
+        <rect x="-38" y="-5" width="15" height="10" rx="1" fill="#e8c568" opacity="0.8"/>
+        <rect x="23" y="-5" width="15" height="10" rx="1" fill="#e8c568" opacity="0.8"/>
+        <text x="0" y="5" font-family="Georgia,serif" font-size="9" fill="#0d2340" text-anchor="middle" font-weight="bold">SAR t₁</text>
+      </g>
+      <!-- SAR Satellite 2 (pass 2) -->
+      <g transform="translate(420,55)">
+        <rect x="-22" y="-10" width="44" height="20" rx="2" fill="#7ab8e8"/>
+        <rect x="-38" y="-5" width="15" height="10" rx="1" fill="#e8c568" opacity="0.8"/>
+        <rect x="23" y="-5" width="15" height="10" rx="1" fill="#e8c568" opacity="0.8"/>
+        <text x="0" y="5" font-family="Georgia,serif" font-size="9" fill="#0d2340" text-anchor="middle" font-weight="bold">SAR t₂</text>
+      </g>
+      <!-- Radar beams -->
+      <line x1="280" y1="45" x2="430" y2="165" stroke="#5a9cd4" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.7"/>
+      <line x1="420" y1="65" x2="430" y2="165" stroke="#7ab8e8" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.7"/>
+      <line x1="280" y1="45" x2="530" y2="168" stroke="#5a9cd4" stroke-width="0.8" stroke-dasharray="5,3" opacity="0.4"/>
+      <line x1="420" y1="65" x2="530" y2="168" stroke="#7ab8e8" stroke-width="0.8" stroke-dasharray="5,3" opacity="0.4"/>
+      <!-- Baseline -->
+      <line x1="280" y1="35" x2="420" y2="55" stroke="#c5972a" stroke-width="1.5" opacity="0.7"/>
+      <text x="345" y="36" font-family="Georgia,serif" font-size="10" fill="#c5972a" opacity="0.8" text-anchor="middle">Baseline B⊥</text>
+      <!-- Deformation area on ground -->
+      <ellipse cx="435" cy="168" rx="60" ry="8" fill="none" stroke="#e83a3a" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.8"/>
+      <text x="435" y="160" font-family="Georgia,serif" font-size="10" fill="#e83a3a" text-anchor="middle" opacity="0.9">Zona deformasi</text>
+      <!-- Interferogram representation (colorful fringe pattern) -->
+      <g transform="translate(600,70)">
+        <rect x="-80" y="-55" width="160" height="110" rx="4" fill="rgba(13,35,64,0.9)" stroke="#c5972a" stroke-width="0.8"/>
+        <!-- colorful fringes -->
+        <ellipse cx="0" cy="0" rx="30" ry="22" fill="none" stroke="#c5972a" stroke-width="2.5" opacity="0.9"/>
+        <ellipse cx="0" cy="0" rx="42" ry="31" fill="none" stroke="#e8c568" stroke-width="2" opacity="0.8"/>
+        <ellipse cx="0" cy="0" rx="54" ry="40" fill="none" stroke="#3aaa60" stroke-width="1.8" opacity="0.7"/>
+        <ellipse cx="0" cy="0" rx="65" ry="48" fill="none" stroke="#5a9cd4" stroke-width="1.5" opacity="0.6"/>
+        <ellipse cx="0" cy="0" rx="12" ry="9" fill="#c5972a" opacity="0.7"/>
+        <text x="0" y="58" font-family="Georgia,serif" font-size="10" fill="#e8c568" text-anchor="middle">Interferogram</text>
+      </g>
+      <!-- accuracy -->
+      <text x="65" y="60" font-family="Georgia,serif" font-size="11" fill="#e8c568" opacity="0.7">Akurasi deformasi:</text>
+      <text x="65" y="80" font-family="Georgia,serif" font-size="16" fill="#e8c568" font-weight="bold">±1–5 mm</text>
+      <text x="65" y="96" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.5)">resolusi spasial 25 m</text>
+    </svg>
+  </div>
+  <p class="fig-caption">Gambar 4. Prinsip InSAR: dua akuisisi SAR pada waktu berbeda menghasilkan interferogram yang merekam deformasi permukaan</p>
+
+  <div class="tech-body">
+    <p>
+      InSAR (Interferometric Synthetic Aperture Radar) adalah teknik geodetik berbasis satelit yang memanfaatkan perbandingan fase gelombang radar dari dua atau lebih citra SAR yang diakuisisi pada waktu berbeda di atas area yang sama. Dari selisih fase tersebut dihasilkan peta deformasi permukaan bumi dengan ketelitian milimeter, meski instrumennya berada ratusan kilometer di atas bumi.
+    </p>
+
+    <div class="two-col">
+      <div class="col-section">
+        <h4>Cara Kerja</h4>
+        <p>
+          Satelit SAR seperti Sentinel-1 (ESA) memancarkan gelombang mikro ke permukaan bumi dan merekam sinyal yang dipantulkan kembali. Ketika satelit melewati orbit yang sama pada waktu yang berbeda (repeat pass), fase kedua citra dibandingkan. Pergeseran fase yang muncul mencerminkan perubahan jarak antara satelit dan permukaan — termasuk penurunan atau pengangkatan tanah dalam skala milimeter. Teknik D-InSAR (Differential InSAR) menghilangkan kontribusi topografi, sehingga yang tersisa hanyalah sinyal deformasi.
+        </p>
+      </div>
+      <div class="col-section">
+        <h4>Manfaat &amp; Kegunaan</h4>
+        <ul class="benefit-list">
+          <li>Pemantauan penurunan muka tanah (land subsidence) di kota-kota besar seperti Jakarta, Semarang, dan Bandung</li>
+          <li>Pemantauan deformasi lereng, potensi longsor, dan pergerakan massa tanah secara luas</li>
+          <li>Pengukuran perpindahan seismik (co-seismic displacement) pascagempa bumi secara cepat</li>
+          <li>Pemantauan aktivitas gunung berapi: deteksi inflasi/deflasi magma dalam kawah</li>
+          <li>Evaluasi stabilitas infrastruktur besar (bendungan, jembatan, tambang) dari udara</li>
+          <li>Pembuatan DEM (Digital Elevation Model) resolusi medium area yang sulit dijangkau</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <p><strong>Referensi:</strong> Wikipedia contributors (2024). Interferometric synthetic-aperture radar. <em>Wikipedia, The Free Encyclopedia</em>. | Burgmann, R., Rosen, P.A., &amp; Fielding, E.J. (2000). Synthetic aperture radar interferometry to measure Earth's surface topography and its deformation. <em>Annual Review of Earth and Planetary Sciences</em>, 28, 169–209. | Kelompok Keilmuan Geodesi ITB (2024). Teknologi InSAR. geodesy.gd.itb.ac.id</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  TEKNOLOGI 5 – MBES                                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="tech-page">
+  <div class="tech-header">
+    <div class="tech-number"></div>
+    <div class="tech-header-text">
+      <p class="tech-domain">Kegiatan: Laut</p>
+      <h2 class="tech-title">Multibeam Echosounder (MBES)</h2>
+      <p class="tech-fullname">Multibeam Sonar — Hydrographic Bathymetric Survey</p>
+    </div>
+  </div>
+
+  <div class="tech-tags">
+    <span class="tag">Batimetri</span>
+    <span class="tag">Survei Hidrografi</span>
+    <span class="tag">Peta Laut</span>
+    <span class="tag alt">Laut</span>
+  </div>
+
+  <div class="tech-figure">
+    <svg viewBox="0 0 860 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d3a6e"/>
+          <stop offset="100%" stop-color="#061a38"/>
+        </linearGradient>
+        <linearGradient id="seafloor" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#4a3010"/>
+          <stop offset="100%" stop-color="#2c1c08"/>
+        </linearGradient>
+      </defs>
+      <!-- sky -->
+      <rect width="860" height="65" fill="#0d2340"/>
+      <!-- water -->
+      <rect x="0" y="65" width="860" height="125" fill="url(#ocean)"/>
+      <!-- water surface line -->
+      <path d="M 0,65 Q 215,60 430,66 Q 645,72 860,65" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <!-- seafloor -->
+      <path d="M 0,190 Q 100,175 200,185 Q 300,195 400,180 Q 500,168 600,175 Q 700,182 860,170 L 860,220 L 0,220 Z" fill="url(#seafloor)"/>
+      <!-- survey vessel -->
+      <g transform="translate(430,55)">
+        <!-- hull -->
+        <path d="M -55,0 L -55,18 Q -30,26 0,26 Q 30,26 55,18 L 55,0 Z" fill="#1a3a5c" stroke="#e8c568" stroke-width="1.2"/>
+        <!-- superstructure -->
+        <rect x="-20" y="-20" width="40" height="22" rx="2" fill="#1a3a5c" stroke="#7ab8e8" stroke-width="1"/>
+        <!-- mast -->
+        <line x1="0" y1="-20" x2="0" y2="-42" stroke="#e8c568" stroke-width="1.5"/>
+        <!-- GNSS antenna -->
+        <circle cx="0" cy="-44" r="4" fill="none" stroke="#c5972a" stroke-width="1.5"/>
+        <!-- MBES transducer (under hull) -->
+        <rect x="-8" y="24" width="16" height="8" rx="2" fill="#c5972a"/>
+        <!-- label -->
+        <text x="0" y="-50" font-family="Georgia,serif" font-size="10" fill="#e8c568" text-anchor="middle" opacity="0.9">Kapal Survei</text>
+      </g>
+      <!-- multibeam swath (fan shape) -->
+      <g transform="translate(430,87)">
+        <!-- fan beams -->
+        <line x1="0" y1="0" x2="-210" y2="92" stroke="#c5972a" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="0" x2="-168" y2="92" stroke="#c5972a" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="0" x2="-126" y2="92" stroke="#c5972a" stroke-width="0.9" opacity="0.6"/>
+        <line x1="0" y1="0" x2="-84" y2="92" stroke="#c5972a" stroke-width="0.9" opacity="0.7"/>
+        <line x1="0" y1="0" x2="-42" y2="92" stroke="#c5972a" stroke-width="1" opacity="0.8"/>
+        <line x1="0" y1="0" x2="0" y2="92" stroke="#e8c568" stroke-width="1.2" opacity="0.9"/>
+        <line x1="0" y1="0" x2="42" y2="92" stroke="#c5972a" stroke-width="1" opacity="0.8"/>
+        <line x1="0" y1="0" x2="84" y2="92" stroke="#c5972a" stroke-width="0.9" opacity="0.7"/>
+        <line x1="0" y1="0" x2="126" y2="92" stroke="#c5972a" stroke-width="0.9" opacity="0.6"/>
+        <line x1="0" y1="0" x2="168" y2="92" stroke="#c5972a" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="0" x2="210" y2="92" stroke="#c5972a" stroke-width="0.8" opacity="0.5"/>
+        <!-- swath coverage bar at seafloor -->
+        <rect x="-215" y="90" width="430" height="5" rx="2" fill="#c5972a" opacity="0.35"/>
+        <text x="0" y="110" font-family="Georgia,serif" font-size="10" fill="#e8c568" text-anchor="middle" opacity="0.8">Cakupan swath MBES</text>
+      </g>
+      <!-- depth contour labels -->
+      <text x="38" y="120" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.5)">−20 m</text>
+      <text x="38" y="150" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.4)">−40 m</text>
+      <text x="38" y="178" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.35)">−60 m</text>
+      <!-- SVP probe -->
+      <line x1="730" y1="87" x2="730" y2="180" stroke="#3aaa60" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+      <circle cx="730" cy="180" r="4" fill="#3aaa60" opacity="0.8"/>
+      <text x="742" y="110" font-family="Georgia,serif" font-size="10" fill="#3aaa60" opacity="0.8">SVP</text>
+    </svg>
+  </div>
+  <p class="fig-caption">Gambar 5. Kapal survei MBES memancarkan kipas sonar multibeam, merekam topografi dasar laut secara menyeluruh</p>
+
+  <div class="tech-body">
+    <p>
+      Multibeam Echosounder (MBES) adalah instrumen hidrografi yang memancarkan pulsa akustik dalam bentuk kipas lebar (swath) ke dasar perairan secara simultan. Berbeda dengan singlebeam echosounder yang hanya merekam satu titik kedalaman di bawah kapal, MBES mampu memetakan jalur selebar 3–7 kali kedalaman air dalam sekali lintasan, menghasilkan model batimetri dasar laut yang sangat detail.
+    </p>
+
+    <div class="two-col">
+      <div class="col-section">
+        <h4>Cara Kerja</h4>
+        <p>
+          Transduser MBES yang terpasang di lambung kapal memancarkan pulsa sonar dalam kisaran sudut lebar (umumnya 120°–150°). Waktu tempuh setiap pulsa dari transduser hingga dasar laut dan kembali diukur dengan sangat presisi, lalu dikonversi menjadi kedalaman menggunakan profil kecepatan suara di air (Sound Velocity Profile/SVP). Data posisi kapal disuplai oleh GNSS, dan orientasi kapal (pitch, roll, heave) dikoreksi menggunakan sensor gerak (MRU/IMU). Integrasi semua data ini menghasilkan titik-titik cloud batimetri yang kemudian diolah menjadi peta kontur dasar laut.
+        </p>
+      </div>
+      <div class="col-section">
+        <h4>Manfaat &amp; Kegunaan</h4>
+        <ul class="benefit-list">
+          <li>Pemetaan alur pelayaran pelabuhan untuk menentukan keamanan navigasi kapal besar</li>
+          <li>Survei batimetri dasar laut dalam rangka perencanaan kabel bawah laut dan pipa minyak bumi</li>
+          <li>Kajian sedimentasi muara sungai, erosi pantai, dan perubahan topografi dasar perairan</li>
+          <li>Inventarisasi sumber daya mineral dasar laut dan pemetaan terumbu karang</li>
+          <li>Dukungan operasi kapal riset oseanografi dalam memahami morfologi lantai samudra</li>
+          <li>Data acuan untuk pemodelan tsunami dan sistem peringatan dini bencana laut</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ref-box">
+    <p><strong>Referensi:</strong> Sasmito, B., Prasetyo, Y., Sabri, L.M., &amp; Awaluddin, M. (2018). Kajian jalur pelabuhan MSTP Teluk Awur Jepara menggunakan MBES dan SIG. <em>Elipsoida: Jurnal Geodesi dan Geomatika</em>, 1(02). doi:10.14710/elipsoida.2018.3696 | Wikipedia contributors (2024). Multibeam echosounder. <em>Wikipedia, The Free Encyclopedia</em>. | NOAA (2018). <em>Hydrographic Specifications and Deliverables</em>. Office of Coast Survey.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  PENUTUP                                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="closing-page">
+  <p class="section-eyebrow">Penutup</p>
+  <h2 class="section-heading">Sintesis &amp; Prospek</h2>
+  <div class="heading-rule"></div>
+
+  <p style="font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:16px;">
+    Kelima teknologi yang diulas dalam kliping ini — UAV Fotogrametri, LiDAR, GNSS RTK/PPK, InSAR, dan Multibeam Echosounder — bukanlah entitas yang berdiri sendiri. Di lapangan, praktisi geodesi dan geomatika justru kerap memadukan dua atau lebih teknologi ini dalam satu alur kerja terpadu. Survei pemetaan pesisir modern, misalnya, dapat sekaligus menggabungkan GNSS RTK untuk koordinat GCP, UAV fotogrametri untuk zona intertidal, MBES untuk perairan dangkal, dan InSAR untuk pemantauan subsidensi jangka panjang.
+  </p>
+
+  <p style="font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:24px;">
+    Ke depan, integrasi kecerdasan buatan (AI) dalam pengolahan point cloud LiDAR, interpretasi interferogram InSAR secara otomatis, dan perencanaan jalur terbang drone adaptif diperkirakan akan semakin mengakselerasi produktivitas sekaligus menurunkan kebutuhan keahlian teknis tinggi pada tingkat operasional. Namun pemahaman konseptual yang kuat terhadap prinsip geodetik yang mendasari setiap teknologi tetap menjadi kompetensi yang tak tergantikan.
+  </p>
+
+  <div class="closing-grid">
+    <div class="closing-card">
+      <div class="cc-num"></div>
+      <div class="cc-name">UAV Fotogrametri</div>
+    </div>
+    <div class="closing-card">
+      <div class="cc-num"></div>
+      <div class="cc-name">LiDAR Airborne</div>
+    </div>
+    <div class="closing-card">
+      <div class="cc-num"></div>
+      <div class="cc-name">GNSS RTK / PPK</div>
+    </div>
+    <div class="closing-card">
+      <div class="cc-num"></div>
+      <div class="cc-name">InSAR Satelit</div>
+    </div>
+    <div class="closing-card">
+      <div class="cc-num"></div>
+      <div class="cc-name">Multibeam MBES</div>
+    </div>
+  </div>
+
+  <div class="final-rule"></div>
+
+  <div class="footer-identity">
+    <div>
+      <div class="fi-name">Anom Ali Subarkah</div>
+      <div class="fi-nrp">NRP 232025066</div>
+    </div>
+    <div class="footer-year">2026
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
